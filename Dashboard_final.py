@@ -16,7 +16,7 @@ raw_password = "YOUR_PASSWORD"
 safe_password = urllib.parse.quote_plus(raw_password)
 engine = create_engine(f"mysql+pymysql://root:{safe_password}@localhost/MyPortfolio")
 
-# --- SIDEBAR: DATA CONTROLS ---
+# SIDEBAR: DATA CONTROLS 
 st.sidebar.header(" Data Controls")
 
 # FEATURE 1: Manual Data Entry Form
@@ -65,7 +65,7 @@ if st.sidebar.button(' Update Live Prices'):
         except Exception as e:
             st.sidebar.error(f"Update failed: {e}")
 
-# --- MAIN DASHBOARD LOGIC ---
+# MAIN DASHBOARD LOGIC 
 try:
     with engine.connect() as conn:
         # Complex SQL Queries to aggregate portfolios
